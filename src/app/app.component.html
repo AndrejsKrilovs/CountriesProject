@@ -1,3 +1,55 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <table class="table">
+    <tbody *ngFor="let val of data">
+    <tr>
+      <td>{{ val.name }}</td>
+      <td>
+        <div *ngFor="let domain of val.topLevelDomain">{{ domain }}<br/></div>
+      </td>
+      <td>{{ val.alpha2Code }}</td>
+      <td>{{ val.alpha3Code }}</td>
+      <td>
+        <div *ngFor="let callingCode of val.callingCodes">{{ callingCode }}<br/></div>
+      </td>
+      <td>{{ val.topLevelDomain }}</td>
+      <td>{{ val.capital }}</td>
+      <td>
+        <div *ngFor="let altSpelling of val.altSpellings">{{ altSpelling }}<br/></div>
+      </td>
+      <td>{{ val.region }}</td>
+      <td>{{ val.subregion }}</td>
+      <td>
+        <div *ngFor="let rec of val.latlng">{{ rec }}<br/></div>
+      </td>
+      <td>{{ val.demonym }}</td>
+      <td>{{ val.area }}</td>
+      <td>{{ val.gini }}</td>
+      <td>
+        <div *ngFor="let timezone of val.timezones">{{ timezone }}<br/></div>
+      </td>
+      <td>
+        <div *ngFor="let border of val.borders">{{ border }}<br/></div>
+      </td>
+      <td>{{ val.nativeName }}</td>
+      <td>{{ val.numericCode }}</td>
+      <td>
+        <div *ngFor="let currency of val.currencies">
+          <p>
+            <b>Currency:</b><br/>
+            <span style="font-size: 90%">{{ currency.code }} ({{ currency.symbol }})</span>
+          </p>
+        </div>
+      </td>
+      <td>
+        <div *ngFor="let language of val.languages">
+          <p>
+            <b>Language:</b><br/>
+            {{ language.nativeName }}
+          </p>
+        </div>
+      </td>
+      <td><img src="{{ val.flag }}" width="50" height="30"></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
